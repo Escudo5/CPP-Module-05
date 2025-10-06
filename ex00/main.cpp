@@ -6,27 +6,31 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 12:47:23 by smarquez          #+#    #+#             */
-/*   Updated: 2025/10/06 13:04:56 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/10/06 14:57:45 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-int main()
-{
-    Bureaucrat Pepe = Bureaucrat("Pepe", 2);
-    Bureaucrat Juan = Bureaucrat("Juan", 3);
-    
-    Pepe.incrementGrade();
-    // Pepe.getGrade();
-    std::cout << Pepe.getName() << Pepe.getGrade() << std::endl;
-    // Pepe.getName();
-    Juan.decrementGrade();
-    // Juan.getGrade();
+int main() {
+    try {
+        Bureaucrat pepe("Pepe", 2);
+        pepe.incrementGrade(); // pasa a 1
+        std::cout << pepe.getName() << " tiene grado " << pepe.getGrade() << std::endl;
 
-    Pepe.incrementGrade();
-    // Pepe.getGrade();
-    Pepe.incrementGrade();
-    // Pepe.getGrade();
-    
+        pepe.incrementGrade(); // aquí debería lanzar excepción
+    } 
+    catch (std::exception &e) {
+        std::cout << "Excepción atrapada: " << e.what() << std::endl;
+    }
+
+    try {
+        Bureaucrat juan("Juan", 150);
+        juan.decrementGrade(); // aquí debería lanzar excepción
+    } 
+    catch (std::exception &e) {
+        std::cout << "Excepción atrapada: " << e.what() << std::endl;
+    }
+
+    return 0;
 }
