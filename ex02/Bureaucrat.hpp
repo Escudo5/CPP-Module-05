@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 11:42:25 by smarquez          #+#    #+#             */
-/*   Updated: 2025/10/16 15:45:05 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:04:24 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include <exception>
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class AForm;
 class Bureaucrat
@@ -54,7 +54,7 @@ class Bureaucrat
         
         void incrementGrade();
         void decrementGrade();
-        void signForm(Form &form);
+        void signForm(AForm &form);
         void executeForm(AForm const &form)const;
         
     private:

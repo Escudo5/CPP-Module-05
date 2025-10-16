@@ -47,6 +47,10 @@ std::string AForm::getName()const
 {
     return(this->_name);
 }
+std::string AForm::getTarget()const
+{
+    return(this->target);
+}
 
 bool AForm::getIsSigned()const
 {

@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:06:50 by smarquez          #+#    #+#             */
-/*   Updated: 2025/10/16 16:11:35 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/10/16 16:31:54 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,17 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AFor
 PresidentialPardonForm::~PresidentialPardonForm()
 {
     
+}
+
+
+
+void PresidentialPardonForm::execute(Bureaucrat const &executor)const
+{
+    AForm::execute(executor);
+    this->action();
+}
+
+void PresidentialPardonForm::action() const
+{
+    std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

@@ -12,6 +12,7 @@
 
 
 #include <iostream>
+#include <fstream>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -23,6 +24,7 @@ class AForm
         bool isSigned;
         const int gradeToSign;
         const int gradeToExecute;
+        std::string target;
 
 
     public:
@@ -37,6 +39,7 @@ class AForm
         void  beSigned(const Bureaucrat &bureaucrat);
         int getToExecute()const;
         int getToSign()const;
+        std::string getTarget()const;
 
         
         
