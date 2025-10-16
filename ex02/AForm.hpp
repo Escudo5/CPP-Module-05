@@ -9,10 +9,13 @@
 /*   Updated: 2025/10/16 15:49:43 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -29,10 +32,10 @@ class AForm
 
     public:
     
-        AForm(std::string name, int gradeToSign, int gradeToExecute);
+        AForm(std::string name, int gradeToSign, int gradeToExecute, std::string target);
         // AForm(const AForm &copy);
         // AForm &operator=(const AForm &copy);
-        ~AForm();
+        virtual ~AForm();
         
         std::string getName()const;
         bool getIsSigned()const;
@@ -55,6 +58,12 @@ class AForm
                 virtual const char* what() const throw();
         };
 
+        class FormNotSignedException : public std::exception
+        {
+            public:
+                virtual const char * what() const throw();
+        };
+
         void execute(Bureaucrat const &executor)const;
         virtual void action() const = 0;
         
@@ -62,3 +71,4 @@ class AForm
 
 std::ostream &operator<<(std::ostream &os, const AForm &obj);
 
+#endif

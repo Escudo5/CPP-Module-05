@@ -6,12 +6,12 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 11:51:17 by smarquez          #+#    #+#             */
-/*   Updated: 2025/10/16 15:31:26 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/10/16 18:53:17 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat()
 {
@@ -55,7 +55,7 @@ std::string Bureaucrat::getName()const
 }
 
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
     try
     {
@@ -65,7 +65,21 @@ void Bureaucrat::signForm(Form &form)
     }
     catch(const std::exception &e)
     {
-        std::cerr << this->name << " signed " << form.getName() <<  " because " << e.what() << std::endl;
+        std::cerr << this->name << " couldn`t sign " << form.getName() <<  " because " << e.what() << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(AForm const &form)const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->getName() << " executed " << form.getName() << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << this->getName() << " couldn’t execute " << form.getName()
+                  << " because " << e.what() << std::endl;
     }
 }
 

@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:59:59 by smarquez          #+#    #+#             */
-/*   Updated: 2025/10/16 16:14:10 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/10/16 18:16:17 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ShrubberyCreationForm : public AForm
         ~ShrubberyCreationForm();
 
     
-        virtual void execute(Bureaucrat const &executor)const = 0;
+        void execute(Bureaucrat const &executor)const;
         void action()const;
 };
 
