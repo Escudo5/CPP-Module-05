@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AAForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 16:52:18 by smarquez          #+#    #+#             */
-/*   Updated: 2025/10/16 14:42:05 by smarquez         ###   ########.fr       */
+/*   Created: 2025/10/16 15:41:03 by smarquez          #+#    #+#             */
+/*   Updated: 2025/10/16 15:49:43 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
 
 #include <iostream>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
     private: 
         const std::string _name;
@@ -29,10 +27,10 @@ class Form
 
     public:
     
-        Form(std::string name, int gradeToSign, int gradeToExecute);
-        Form(const Form &copy);
-        Form &operator=(const Form &copy);
-        ~Form();
+        AForm(std::string name, int gradeToSign, int gradeToExecute);
+        // AForm(const AForm &copy);
+        // AForm &operator=(const AForm &copy);
+        ~AForm();
         
         std::string getName()const;
         bool getIsSigned()const;
@@ -53,10 +51,11 @@ class Form
             public:
                 virtual const char* what() const throw();
         };
+
+        void execute(Bureaucrat const &executor)const;
+        virtual void action() const = 0;
         
 };
 
-std::ostream &operator<<(std::ostream &os, const Form &obj);
+std::ostream &operator<<(std::ostream &os, const AForm &obj);
 
-
-#endif

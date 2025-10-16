@@ -1,4 +1,4 @@
-NAME = ex01
+NAME = ex02
 
 SRC = main.cpp Bureaucrat.cpp Form.cpp
 OBJ = $(SRC:.cpp=.o)
@@ -16,11 +16,11 @@ $(NAME) : $(OBJ)
 
 clean:
 	@rm -rf $(OBJ)
-	@echo "[ex01] Object files cleaned."
+	@echo "[ex02] Object files cleaned."
 
 fclean: clean
 	@rm -rf $(NAME)
-	@echo "[ex01] Executable cleaned."
+	@echo "[ex02] Executable cleaned."
 
 re: fclean all
 
