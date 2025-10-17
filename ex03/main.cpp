@@ -3,69 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: escudo5 <escudo5@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 17:03:10 by smarquez          #+#    #+#             */
-/*   Updated: 2025/10/16 18:49:59 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/10/17 13:16:23 by escudo5          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 
 int main()
 {
+	srand(time(NULL));
+	Intern someRandomIntern;
+	Bureaucrat boss("Jefe", 1);
 
-  try
-    {
-        Bureaucrat Josele("Josele", 1);
-        Bureaucrat Manueh("Manueh", 120);
-        Bureaucrat Guille("Guille", 149);
+	std::cout << "\n--- Caso válido: Shrubbery ---" << std::endl;
+	AForm *form1 = someRandomIntern.makeForm("shrubbery creation", "garden");
+	if (form1)
+	{
+		boss.signForm(*form1);
+		boss.executeForm(*form1);
+		delete form1;
+	}
 
-        AForm *presi = new PresidentialPardonForm("home");
-        AForm *shrub = new ShrubberyCreationForm("Zombie");
-        AForm *robo  = new RobotomyRequestForm("John");
+	std::cout << "\n--- Caso válido: Robotomy ---" << std::endl;
+	AForm *form2 = someRandomIntern.makeForm("robotomy request", "Bender");
+	if (form2)
+	{
+		boss.signForm(*form2);
+		boss.executeForm(*form2);
+		delete form2;
+	}
 
-        std::cout << "\n=== JOSELE ===" << std::endl;
-        Josele.signForm(*presi);
-        Josele.signForm(*shrub);
-        Josele.signForm(*robo);
+	std::cout << "\n--- Caso válido: Presidential ---" << std::endl;
+	AForm *form3 = someRandomIntern.makeForm("presidential pardon", "Pepito");
+	if (form3)
+	{
+		boss.signForm(*form3);
+		boss.executeForm(*form3);
+		delete form3;
+	}
 
-        Josele.executeForm(*presi);
-        Josele.executeForm(*shrub);
-        Josele.executeForm(*robo);
+	std::cout << "\n--- Caso inválido: Form inexistente ---" << std::endl;
+	AForm *form4 = someRandomIntern.makeForm("invalid form", "Nobody");
+	if (form4)
+		delete form4;
 
-        std::cout << "\n=== MANUEH ===" << std::endl;
-        Manueh.signForm(*presi);
-        Manueh.signForm(*shrub);
-        Manueh.signForm(*robo);
-
-        Manueh.executeForm(*presi);
-        Manueh.executeForm(*shrub);
-        Manueh.executeForm(*robo);
-
-        std::cout << "\n=== GUILLE ===" << std::endl;
-        Guille.signForm(*presi);
-        Guille.signForm(*shrub);
-        Guille.signForm(*robo);
-
-        Guille.executeForm(*presi);
-        Guille.executeForm(*shrub);
-        Guille.executeForm(*robo);
-
-        delete presi;
-        delete shrub;
-        delete robo;
-    }
-    catch (std::exception &e)
-    {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
-    }
-
-    return(0);
+	return 0;
 }
