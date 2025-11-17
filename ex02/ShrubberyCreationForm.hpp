@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:59:59 by smarquez          #+#    #+#             */
-/*   Updated: 2025/10/16 18:16:17 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/11/17 15:10:24 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class ShrubberyCreationForm : public AForm
     
     public:
         ShrubberyCreationForm(const std::string &target);
+        ShrubberyCreationForm(const ShrubberyCreationForm &copy);
+        ShrubberyCreationForm &operator=(const ShrubberyCreationForm &copy);
         ~ShrubberyCreationForm();
 
     

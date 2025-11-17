@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:57:58 by smarquez          #+#    #+#             */
-/*   Updated: 2025/10/16 18:16:11 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/11/17 15:08:32 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class RobotomyRequestForm : public AForm
     public: 
 
         RobotomyRequestForm(const std::string &target);
+        RobotomyRequestForm(const RobotomyRequestForm &copy);
+        RobotomyRequestForm &operator=(const RobotomyRequestForm &copy);
         ~RobotomyRequestForm();
         
         void execute(Bureaucrat const &executor)const;

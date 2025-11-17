@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:11:42 by smarquez          #+#    #+#             */
-/*   Updated: 2025/10/16 18:29:44 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/11/17 15:18:25 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,19 @@ RobotomyRequestForm::~RobotomyRequestForm()
     
 }
 
+// RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy)
+// {
+//     this->target = copy.target;
+// }
+
+// RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
+// {
+//     if (this != &copy)
+//     {
+//         target = copy.target
+//     }
+//     return *this;
+// }
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor)const
 {

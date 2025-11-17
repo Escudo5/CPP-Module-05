@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:13:08 by smarquez          #+#    #+#             */
-/*   Updated: 2025/10/16 18:29:54 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/11/17 15:19:13 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,20 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm(
 {
     
 }
+
+// ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy)
+// {
+//     this->target = copy.target;
+// }
+
+// ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &copy)
+// {
+//     if (this != &copy)
+//     {
+//         target = copy.target
+//     }
+//         return *this;
+// }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {

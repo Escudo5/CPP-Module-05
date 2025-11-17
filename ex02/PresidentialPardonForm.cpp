@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:06:50 by smarquez          #+#    #+#             */
-/*   Updated: 2025/10/16 18:28:02 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/11/17 15:17:33 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,19 @@ PresidentialPardonForm::~PresidentialPardonForm()
     
 }
 
+// PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy)
+// {
+//     this->target = copy.target;
+// }
 
+// PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &copy)
+// {
+//     if (this != &copy)
+//     {
+//         target = copy.target
+//     }
+//         return *this;
+// }
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor)const
 {
